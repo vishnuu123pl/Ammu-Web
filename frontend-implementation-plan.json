@@ -1,0 +1,42 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Pre-populate Borrow page with sample items for prototype presentation",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "summary": "Display pre-populated sample items (20+ items across 6 categories: Textbooks, Calculators, Sports, Lab Coat, Electronics/DSLR, Hostel Essentials) on the Borrow page with realistic ₹ pricing, hostel-based locations, and owner names for prototype demonstration",
+      "acceptanceCriteria": [
+        "At least 20 sample items are visible on the Borrow page without requiring login",
+        "Items span at least 6 categories: Textbooks, Calculators, Sports, Lab Coat, Electronics/DSLR, Hostel Essentials",
+        "Every sample item displays a ₹ per-day price within the ₹5–₹50 range",
+        "Every sample item shows a hostel-based location string (e.g., 'Hostel B, Room 204')",
+        "Every sample item has a plausible owner display name",
+        "Items are searchable and filterable by category on the Borrow page",
+        "Sample data loads immediately on the Borrow page for the prototype demo without needing any manual data entry"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/BorrowPage.tsx",
+          "operation": "modify",
+          "description": "Ensure the BorrowPage uses the getAllItems or getAvailableItems query hook to fetch and display all pre-populated sample items immediately on load. Verify that the page renders items without requiring authentication, and that filtering by category, searching by keyword, and displaying item cards with pricing (₹ per-day within ₹5–₹50), hostel-based locations, and owner names work correctly with the sample data. Confirm that the existing ItemDetailModal integration supports viewing and borrowing sample items."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Review the useGetAllItems and useGetAvailableItems hooks to ensure they fetch items correctly without requiring authentication (they should work for guest users). Verify that the query is enabled by default and does not depend on the actor being authenticated. Ensure the returned Item objects include all necessary fields: id, name, description, category, pricePerDay, pricePerMonth (optional), location (hostel-based string), ownerPrincipal (for display), and hashtag."
+        },
+        {
+          "path": "frontend/src/components/ItemDetailModal.tsx",
+          "operation": "modify",
+          "description": "Verify that the ItemDetailModal correctly displays all item details from the pre-populated sample data, including the item name, description, category, ₹ per-day and per-month pricing (if available), hostel-based location using ItemLocationDisplay, and the owner's display name. Ensure that the borrow request form is accessible for authenticated users viewing sample items. If the owner display name is not currently shown, add it to the modal's item details section using a styled label (e.g., 'Owner: <name>')."
+        },
+        {
+          "path": "frontend/src/pages/CategoriesPage.tsx",
+          "operation": "modify",
+          "description": "Ensure that the category links on the CategoriesPage correctly filter the BorrowPage to show pre-populated sample items for each category (Textbooks, Calculators, Sports, Lab Coat, Electronics/DSLR, Hostel Essentials). Verify that clicking a category card navigates to the BorrowPage with the appropriate category filter applied, and that the sample items in that category are displayed immediately."
+        }
+      ]
+    }
+  ]
+}

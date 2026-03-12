@@ -1,0 +1,26 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T09:16:49.557Z",
+  "summary": "The diff implements REQ-21 by seeding 20+ demo items in the backend (backend/main.mo) across categories including Books (Textbooks), Calculator, Sports, Lab Equipment, Electronics, and Hostel Essentials, each with a per-day price in the ₹5–₹50 range, a hostel-based location string, and a plausible kebab-case owner principal that renders as a display name. The frontend (BorrowPage.tsx, ItemDetailModal.tsx) is updated to display owner display names and handle the demo data. All major acceptance criteria appear addressed.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "A migration module (backend/migration.mo) was added with a run function to handle state migration on canister upgrades.",
+      "reason": "REQ-21 only requests pre-populating demo data. A formal migration module was not requested in the build request, though it is a minor infrastructure addition rather than a user-facing feature.",
+      "evidence": [
+        "backend/migration.mo"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "frontend-file-summaries.txt",
+    "frontend/src/components/ItemDetailModal.tsx",
+    "frontend/src/pages/BorrowPage.tsx",
+    "frontend/src/pages/CategoriesPage.tsx",
+    "project_state.json"
+  ]
+}

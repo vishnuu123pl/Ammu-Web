@@ -1,0 +1,28 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-pre-populate-the-backend-with-a-set-of-realistic-sample-items-across-multiple-categories-for-the-prototype-presentation-include-at-least-20-items-spanning-textbooks-e-g-engineering-drawing-dbms-circuit-theory-data-structures-c-programming-calculators-e-g-casio-fx-991es-plus-texas-instruments-ti-84-classwiz-fx-570-sports-utilities-e-g-cricket-bat-football-badminton-racket-shuttle-cocks-volleyball-lab-coats-e-g-white-lab-coat-size-m-white-lab-coat-size-l-dslrs-electronics-e-g-nikon-d3500-dslr-tripod-stand-usb-hub-and-hostel-essentials-e-g-study-lamp-extension-board-electric-kettle-each-item-must-have-a-realistic-name-a-short-description-an-appropriate-category-matching-the-existing-category-list-a-per-day-price-in-within-5-50-range-an-optional-per-month-price-a-hostel-based-location-string-e-g-hostel-b-room-204-hostel-a-block-3-and-a-plausible-owner-display-name-these-items-should-be-seeded-as-initial-demo-data-accessible-without-authentication-on-the-borrow-page",
+      "featureTitle": "Pre-populate the backend with a set of realistic sample items across multiple categories for the prototype presentation. Include at least 20 items spanning: Textbooks (e.g., Engineering Drawing, DBMS, Circuit Theory, Data Structures, C Programming), Calculators (e.g., Casio FX-991ES Plus, Texas Instruments TI-84, Classwiz FX-570), Sports Utilities (e.g., Cricket Bat, Football, Badminton Racket, Shuttle Cocks, Volleyball), Lab Coats (e.g., White Lab Coat Size M, White Lab Coat Size L), DSLRs/Electronics (e.g., Nikon D3500 DSLR, Tripod Stand, USB Hub), and Hostel Essentials (e.g., Study Lamp, Extension Board, Electric Kettle). Each item must have: a realistic name, a short description, an appropriate category matching the existing category list, a per-day price in ₹ (within ₹5–₹50 range), an optional per-month price, a hostel-based location string (e.g., 'Hostel B, Room 204', 'Hostel A, Block 3'), and a plausible owner display name. These items should be seeded as initial/demo data accessible without authentication on the Borrow page.",
+      "files": [
+        "frontend/src/components/ItemDetailModal.tsx",
+        "frontend/src/pages/BorrowPage.tsx",
+        "frontend/src/pages/CategoriesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "qr-code@1.0.0",
+        "camera@1.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-21"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

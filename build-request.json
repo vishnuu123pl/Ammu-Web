@@ -1,0 +1,48 @@
+{
+  "kind": "build_request",
+  "title": "Pre-populate Borrow page with sample items for prototype presentation",
+  "projectName": "FLUxera",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "text": "Pre-populate the backend with a set of realistic sample items across multiple categories for the prototype presentation. Include at least 20 items spanning: Textbooks (e.g., Engineering Drawing, DBMS, Circuit Theory, Data Structures, C Programming), Calculators (e.g., Casio FX-991ES Plus, Texas Instruments TI-84, Classwiz FX-570), Sports Utilities (e.g., Cricket Bat, Football, Badminton Racket, Shuttle Cocks, Volleyball), Lab Coats (e.g., White Lab Coat Size M, White Lab Coat Size L), DSLRs/Electronics (e.g., Nikon D3500 DSLR, Tripod Stand, USB Hub), and Hostel Essentials (e.g., Study Lamp, Extension Board, Electric Kettle). Each item must have: a realistic name, a short description, an appropriate category matching the existing category list, a per-day price in ₹ (within ₹5–₹50 range), an optional per-month price, a hostel-based location string (e.g., 'Hostel B, Room 204', 'Hostel A, Block 3'), and a plausible owner display name. These items should be seeded as initial/demo data accessible without authentication on the Borrow page.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-9",
+          "msg-10",
+          "msg-11"
+        ],
+        "quotes": [
+          "For borrowing I need items for example textbooks, calculators , sports utilities etc",
+          "I'll pre-populate the Borrow page with a rich set of sample items across categories — Textbooks (Engineering Drawing, DBMS, Circuits, etc.), Calculators (Casio FX-991ES, scientific models), Sports Utilities (cricket bat, football, badminton racket, shuttle cocks), plus Lab Coats, DSLRs, and Hostel Essentials — each with realistic ₹ pricing, owner names, and hostel-based locations for your prototype presentation."
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 20 sample items are visible on the Borrow page without requiring login",
+        "Items span at least 6 categories: Textbooks, Calculators, Sports, Lab Coat, Electronics/DSLR, Hostel Essentials",
+        "Every sample item displays a ₹ per-day price within the ₹5–₹50 range",
+        "Every sample item shows a hostel-based location string (e.g., 'Hostel B, Room 204')",
+        "Every sample item has a plausible owner display name",
+        "Items are searchable and filterable by category on the Borrow page",
+        "Sample data loads immediately on the Borrow page for the prototype demo without needing any manual data entry"
+      ]
+    }
+  ],
+  "constraints": [
+    "All prices must be in Indian Rupees (₹), within the ₹5–₹50/day student-friendly range",
+    "Do not modify any immutable frontend paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui",
+    "Do not break existing backend features: profile management, borrow requests, lost & found, QR code"
+  ],
+  "nonGoals": [
+    "Adding new pages or UI sections beyond the existing Borrow page",
+    "Changing the app's visual theme or color palette",
+    "Adding payment processing or real transaction flows",
+    "Adding real user accounts or actual student data"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

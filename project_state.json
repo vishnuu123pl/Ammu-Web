@@ -1,0 +1,275 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "FLUxera is a student item-sharing/rental website rebuilt specifically for APJ Abdul Kalam Technological University (KTU) students in Kerala, India. Uses Indian Rupees (₹) with ultra-low rent prices (₹5–₹50/day or /month). Features 8 pages: Home, Borrow, Lend, How It Works, Categories, About, FAQ, Contact. Design uses blue/white/light teal palette matching the Fluxera logo (backpack + circular arrows, 'BORROW INSTEAD OF BUY' tagline). Retains all existing features: Internet Identity login, student profile, fully functional borrow/lend backend, QR code generation/scanner, and Lost & Found. GPS tracker replaced with manually-entered location text field.",
+  "architectural_notes": [
+    "Platform: Web application named FLUxera targeting college students",
+    "Currency: Indian Rupees (₹) only; rent range ₹5–₹50 per day or month depending on item category",
+    "Target audience: KTU (APJ Abdul Kalam Technological University) students in Kerala, India",
+    "Color scheme: blue, white, light teal matching Fluxera logo (backpack + circular arrows, 'BORROW INSTEAD OF BUY')",
+    "GPS tracker replaced with manually-entered location text field (e.g. 'Room 204, Hostel B') — live geolocation not supported",
+    "Borrow/Lend pages are fully functional with backend storage, not just demo listings"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-internet-identity-based-authentication-so-students-can-log-in-and-log-out-securely-show-a-login-welcome-screen-before-any-protected-page-is-accessible",
+      "title": "Implement Internet Identity-based authentication so students can log in and log out securely. Show a login/welcome screen before any protected page is accessible.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-student-profile-page-that-displays-the-user-s-principal-identity-display-name-contact-info-list-of-currently-borrowed-items-list-of-currently-lent-items-and-transaction-history",
+      "title": "Create a student profile page that displays the user's principal/identity, display name, contact info, list of currently borrowed items, list of currently lent items, and transaction history.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-borrow-page-where-students-can-browse-all-available-items-listed-for-lending-search-filter-by-category-or-keyword-view-item-details-name-description-owner-price-per-day-availability-and-submit-a-borrow-request",
+      "title": "Build a Borrow page where students can browse all available items listed for lending, search/filter by category or keyword, view item details (name, description, owner, price per day, availability), and submit a borrow request.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-lend-page-where-students-can-list-new-items-they-want-to-lend-out-by-providing-item-name-description-category-photos-url-or-upload-lending-price-per-day-and-availability-dates",
+      "title": "Build a Lend page where students can list new items they want to lend out by providing item name, description, category, photos (URL or upload), lending price per day, and availability dates.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-qr-code-feature-each-listed-item-gets-a-unique-qr-code-generated-from-its-item-id-display-the-qr-code-on-the-item-detail-page-provide-a-qr-scanner-page-that-reads-a-qr-code-from-the-device-camera-and-navigates-to-the-corresponding-item-detail-page",
+      "title": "Implement a QR code feature: each listed item gets a unique QR code generated from its item ID. Display the QR code on the item detail page. Provide a QR Scanner page that reads a QR code from the device camera and navigates to the corresponding item detail page.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-gps-location-tracking-feature-where-borrowers-can-optionally-share-and-update-the-last-known-location-of-a-borrowed-item-latitude-longitude-captured-via-the-browser-geolocation-api-lenders-can-view-the-last-reported-location-of-their-lent-items-on-a-simple-coordinate-display",
+      "title": "Add a GPS/location tracking feature where borrowers can optionally share and update the last-known location of a borrowed item (latitude/longitude captured via the browser Geolocation API). Lenders can view the last reported location of their lent items on a simple coordinate display.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-lost-found-section-where-students-can-post-reports-of-lost-items-with-description-last-seen-location-text-contact-info-and-found-items-with-description-pickup-location-contact-info-other-students-can-browse-all-active-lost-found-posts",
+      "title": "Create a Lost & Found section where students can post reports of lost items (with description, last-seen location text, contact info) and found items (with description, pickup location, contact info). Other students can browse all active lost/found posts.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-fluxera-with-a-modern-clean-minimal-academic-aesthetic-warm-off-white-cream-background-deep-teal-and-amber-accent-colors-readable-sans-serif-typography-card-based-layouts-and-a-persistent-top-navigation-bar-with-links-to-borrow-lend-qr-scanner-lost-found-and-profile",
+      "title": "Design FLUxera with a modern, clean, minimal academic aesthetic: warm off-white/cream background, deep teal and amber accent colors, readable sans-serif typography, card-based layouts, and a persistent top navigation bar with links to Borrow, Lend, QR Scanner, Lost & Found, and Profile.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-display-a-fluxera-logo-on-the-login-screen-and-in-the-navigation-bar-using-the-generated-logo-image-stored-as-a-static-asset",
+      "title": "Generate and display a FLUxera logo on the login screen and in the navigation bar using the generated logo image stored as a static asset.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-the-home-page-with-a-hero-section-featuring-the-fluxera-logo-bold-heading-fluxera-subtitle-borrow-instead-of-buy-tagline-designed-for-ktu-students-in-kerala-and-cta-buttons-get-started-and-join-as-lender-include-sections-how-fluxera-works-3-steps-search-items-near-your-college-borrow-for-extremely-low-rent-5-50-return-safely-categories-grid-books-notes-lab-coats-calculators-electronics-hostel-essentials-tools-bags-sports-items-why-choose-fluxera-reduce-cost-for-ktu-students-peer-to-peer-borrowing-based-affordable-renting-encourages-sustainability-helps-hostellers-and-a-final-cta-section-join-the-ktu-sharing-revolution-with-a-start-borrowing-button-all-pricing-shown-in-indian-rupees",
+      "title": "Rebuild the Home page with: a hero section featuring the Fluxera logo, bold heading 'FLUXERA', subtitle 'Borrow Instead of Buy', tagline 'Designed for KTU students in Kerala', and CTA buttons 'Get Started' and 'Join as Lender'. Include sections: How Fluxera Works (3 steps: Search items near your college → Borrow for extremely low rent ₹5–₹50 → Return safely), Categories grid (Books & Notes, Lab Coats, Calculators, Electronics, Hostel Essentials, Tools, Bags, Sports Items), Why Choose Fluxera (Reduce cost for KTU students, Peer-to-peer borrowing, ₹-based affordable renting, Encourages sustainability, Helps hostellers), and a final CTA section 'Join the KTU Sharing Revolution' with a 'Start Borrowing (₹)' button. All pricing shown in Indian Rupees (₹).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-borrow-page-to-display-item-prices-in-indian-rupees-with-the-label-ultra-low-rent-5-50-add-filters-for-category-hostel-and-college-branch-in-addition-to-existing-keyword-search-borrow-requests-should-support-both-per-day-and-per-month-pricing-options-all-item-cards-must-show-pricing-prominently",
+      "title": "Update the Borrow page to display item prices in Indian Rupees (₹) with the label 'Ultra-Low Rent (₹5–₹50)'. Add filters for category, hostel, and college branch in addition to existing keyword search. Borrow requests should support both per-day and per-month pricing options. All item cards must show ₹ pricing prominently.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-lend-page-with-heading-earn-by-sharing-add-a-reminder-to-lenders-to-set-very-low-rents-student-friendly-initiative-show-example-rent-suggestions-books-5-day-lab-coat-10-day-dslr-tools-50-day-the-item-listing-form-must-accept-pricing-in-per-day-and-per-month-the-submit-button-should-read-post-your-item-replace-the-gps-location-field-with-a-manually-entered-text-field-e-g-room-204-hostel-b",
+      "title": "Update the Lend page with heading 'Earn By Sharing'. Add a reminder to lenders to set very low rents (student-friendly initiative). Show example rent suggestions: Books ₹5/day, Lab coat ₹10/day, DSLR/Tools ₹50/day. The item listing form must accept pricing in ₹ per day and per month. The submit button should read 'Post Your Item (₹)'. Replace the GPS location field with a manually-entered text field (e.g., 'Room 204, Hostel B').",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-how-it-works-page-with-illustrated-step-by-step-sections-step-1-search-show-filters-step-2-borrow-minimum-rent-pricing-step-3-return-each-step-should-have-a-visual-icon-or-illustration-and-a-short-description-include-ktu-kerala-context",
+      "title": "Create a 'How It Works' page with illustrated step-by-step sections: Step 1 – Search (show ₹ filters), Step 2 – Borrow (minimum rent, ₹ pricing), Step 3 – Return. Each step should have a visual icon or illustration and a short description. Include KTU/Kerala context.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-categories-page-with-an-icon-grid-displaying-the-following-categories-engineering-books-notes-electronics-tools-hostel-items-clothing-lab-coat-apron-gadgets-bags-sports-items-calculators-each-category-card-should-be-clickable-and-navigate-to-the-borrow-page-pre-filtered-by-that-category",
+      "title": "Create a Categories page with an icon grid displaying the following categories: Engineering Books, Notes, Electronics, Tools, Hostel Items, Clothing (Lab Coat/Apron), Gadgets, Bags, Sports Items, Calculators. Each category card should be clickable and navigate to the Borrow page pre-filtered by that category.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-about-page-describing-fluxera-s-mission-make-education-affordable-for-ktu-students-vision-a-kerala-wide-borrowing-network-and-values-sustainability-saving-money-peer-to-peer-trust-include-ktu-and-kerala-references-prominently",
+      "title": "Create an About page describing Fluxera's mission (Make education affordable for KTU students), vision (A Kerala-wide borrowing network), and values (sustainability, saving money, peer-to-peer trust). Include KTU and Kerala references prominently.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-faq-page-with-the-following-q-a-entries-is-borrowing-safe-yes-students-are-verified-via-internet-identity-why-are-rents-so-low-because-fluxera-is-made-for-students-what-if-an-item-is-damaged-the-borrower-must-compensate-fairly-does-fluxera-charge-extra-no-hidden-fees-add-additional-student-relevant-faqs-as-appropriate",
+      "title": "Create a FAQ page with the following Q&A entries: 'Is borrowing safe?' → 'Yes, students are verified via Internet Identity'; 'Why are rents so low?' → 'Because Fluxera is made for students'; 'What if an item is damaged?' → 'The borrower must compensate fairly'; 'Does Fluxera charge extra?' → 'No hidden fees'. Add additional student-relevant FAQs as appropriate.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-contact-page-with-a-contact-form-name-email-message-fields-a-whatsapp-link-and-an-email-support-address-include-kerala-friendly-design-with-the-fluxera-color-palette-footer-across-all-pages-should-read-fluxera-2026-made-for-ktu-students-borrow-lend-faq-contact-prices-in-indian-rupees",
+      "title": "Create a Contact page with a contact form (name, email, message fields), a WhatsApp link, and an email support address. Include Kerala-friendly design with the Fluxera color palette. Footer across all pages should read: 'Fluxera © 2026 | Made for KTU Students | Borrow • Lend • FAQ • Contact | Prices in Indian Rupees (₹)'.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-entire-app-s-visual-theme-to-match-the-uploaded-fluxera-logo-medium-blue-4a90c4-range-light-sky-blue-and-white-light-grey-background-use-bold-sans-serif-typography-matching-the-logo-s-wordmark-style-round-card-corners-mobile-first-layouts-and-clean-minimal-design-replace-the-previous-warm-off-white-cream-amber-palette-with-the-new-blue-white-light-teal-palette-apply-the-fluxera-logo-backpack-circular-arrows-consistently-on-the-login-screen-and-in-the-navigation-bar",
+      "title": "Redesign the entire app's visual theme to match the uploaded Fluxera logo: medium blue (#4A90C4 range), light sky blue, and white/light grey background. Use bold sans-serif typography (matching the logo's wordmark style), round card corners, mobile-first layouts, and clean minimal design. Replace the previous warm off-white/cream + amber palette with the new blue/white/light teal palette. Apply the Fluxera logo (backpack + circular arrows) consistently on the login screen and in the navigation bar.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-navigation-bar-to-include-links-for-home-borrow-lend-how-it-works-categories-about-faq-contact-qr-scanner-lost-found-and-profile-the-nav-should-be-sticky-mobile-responsive-with-a-hamburger-menu-and-display-the-fluxera-logo-on-the-left-all-navigation-labels-must-use-english",
+      "title": "Update the navigation bar to include links for: Home, Borrow, Lend, How It Works, Categories, About, FAQ, Contact, QR Scanner, Lost & Found, and Profile. The nav should be sticky, mobile-responsive with a hamburger menu, and display the Fluxera logo on the left. All navigation labels must use English.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-pre-populate-the-backend-with-a-set-of-realistic-sample-items-across-multiple-categories-for-the-prototype-presentation-include-at-least-20-items-spanning-textbooks-e-g-engineering-drawing-dbms-circuit-theory-data-structures-c-programming-calculators-e-g-casio-fx-991es-plus-texas-instruments-ti-84-classwiz-fx-570-sports-utilities-e-g-cricket-bat-football-badminton-racket-shuttle-cocks-volleyball-lab-coats-e-g-white-lab-coat-size-m-white-lab-coat-size-l-dslrs-electronics-e-g-nikon-d3500-dslr-tripod-stand-usb-hub-and-hostel-essentials-e-g-study-lamp-extension-board-electric-kettle-each-item-must-have-a-realistic-name-a-short-description-an-appropriate-category-matching-the-existing-category-list-a-per-day-price-in-within-5-50-range-an-optional-per-month-price-a-hostel-based-location-string-e-g-hostel-b-room-204-hostel-a-block-3-and-a-plausible-owner-display-name-these-items-should-be-seeded-as-initial-demo-data-accessible-without-authentication-on-the-borrow-page",
+      "title": "Pre-populate the backend with a set of realistic sample items across multiple categories for the prototype presentation. Include at least 20 items spanning: Textbooks (e.g., Engineering Drawing, DBMS, Circuit Theory, Data Structures, C Programming), Calculators (e.g., Casio FX-991ES Plus, Texas Instruments TI-84, Classwiz FX-570), Sports Utilities (e.g., Cricket Bat, Football, Badminton Racket, Shuttle Cocks, Volleyball), Lab Coats (e.g., White Lab Coat Size M, White Lab Coat Size L), DSLRs/Electronics (e.g., Nikon D3500 DSLR, Tripod Stand, USB Hub), and Hostel Essentials (e.g., Study Lamp, Extension Board, Electric Kettle). Each item must have: a realistic name, a short description, an appropriate category matching the existing category list, a per-day price in ₹ (within ₹5–₹50 range), an optional per-month price, a hostel-based location string (e.g., 'Hostel B, Room 204', 'Hostel A, Block 3'), and a plausible owner display name. These items should be seeded as initial/demo data accessible without authentication on the Borrow page.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Login/authentication screen for students",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Profile page for each student user",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Borrow page to browse and request items to borrow",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Lend page to list items available for lending at minimal price",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "QR scanner for item identification or transaction verification",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "GPS tracker to track borrowed item locations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Lost and found section for reporting and finding lost items",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Home page with hero section, How It Works steps, Categories grid, Why Choose Fluxera, and CTA for KTU students",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "How It Works page with illustrated steps and ₹ pricing info",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Categories page with icon grid for Engineering books, Notes, Electronics, Tools, Hostel items, Clothing, Gadgets",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "About page with KTU/Kerala mission, sustainability, and affordability messaging",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "FAQ page with student-focused Q&A about safety, pricing, and policies",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Contact page with form, WhatsApp link, and email support",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Update the backend item data model to store price in Indian Rupees (₹) and support both per-day and per-month pricing. Replace the GPS coordinates location fields with a single free-text location string (e.g., 'Room 204, Hostel B'). Ensure all existing backend features (profile, items, borrow requests, lost & found) remain functional.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Pre-populate the Borrow page with sample items (Textbooks, Calculators, Sports Utilities, Lab Coats, DSLRs, Hostel Essentials) with realistic ₹ pricing, owner names, and hostel-based locations for prototype presentation",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "FLUxera",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

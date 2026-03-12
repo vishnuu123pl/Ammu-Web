@@ -1,0 +1,49 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T09:16:49.561Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-21",
+        "summary": "Pre-populate the backend with a set of realistic sample items across multiple categories for the prototype presentation. Include at least 20 items spanning: Textbooks (e.g., Engineering Drawing, DBMS, Circuit Theory, Data Structures, C Programming), Calculators (e.g., Casio FX-991ES Plus, Texas Instruments TI-84, Classwiz FX-570), Sports Utilities (e.g., Cricket Bat, Football, Badminton Racket, Shuttle Cocks, Volleyball), Lab Coats (e.g., White Lab Coat Size M, White Lab Coat Size L), DSLRs/Electronics (e.g., Nikon D3500 DSLR, Tripod Stand, USB Hub), and Hostel Essentials (e.g., Study Lamp, Extension Board, Electric Kettle). Each item must have: a realistic name, a short description, an appropriate category matching the existing category list, a per-day price in ₹ (within ₹5–₹50 range), an optional per-month price, a hostel-based location string (e.g., 'Hostel B, Room 204', 'Hostel A, Block 3'), and a plausible owner display name. These items should be seeded as initial/demo data accessible without authentication on the Borrow page.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/BorrowPage.tsx",
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/components/ItemDetailModal.tsx",
+          "frontend/src/pages/CategoriesPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/BorrowPage.tsx",
+          "frontend/src/components/ItemDetailModal.tsx",
+          "frontend/src/pages/CategoriesPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/ItemDetailModal.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/pages/BorrowPage.tsx",
+    "frontend/src/pages/CategoriesPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
