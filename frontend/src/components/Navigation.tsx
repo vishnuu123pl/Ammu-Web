@@ -56,12 +56,15 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img
-              src="/assets/generated/fluxera-logo.dim_400x120.png"
-              alt="Fluxera"
-              className="h-9 w-auto object-contain"
-            />
+          <Link to="/" className="flex items-center gap-3 shrink-0 group">
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-fluxera-blue to-fluxera-teal shadow-lg group-hover:shadow-card-hover transition-shadow">
+              <img
+                src="/src/assets/fluxera-logo.jpg"
+                alt="Fluxera"
+                className="h-8 w-8 object-contain"
+              />
+            </div>
+            <span className="font-bold text-lg text-primary hidden sm:block">Fluxera</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -70,7 +73,7 @@ export default function Navigation() {
               <Link
                 key={link.path}
                 to={link.path}
-                className="px-3 py-2 text-sm font-medium text-foreground/70 hover:text-primary hover:bg-fluxera-blue-pale/40 rounded-lg transition-colors"
+                className="px-4 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary hover:bg-fluxera-blue-pale/40 rounded-lg transition-colors"
                 activeProps={{ className: 'text-primary bg-fluxera-blue-pale/60 font-semibold' }}
               >
                 {link.label}
@@ -134,42 +137,42 @@ export default function Navigation() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="lg:hidden border-t border-border bg-white shadow-lg">
-          <nav className="px-4 py-3 space-y-1">
+          <nav className="px-2 py-4 space-y-2">
             {[...navLinks, ...moreLinks].map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="block px-3 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary hover:bg-fluxera-blue-pale/40 rounded-lg transition-colors"
+                className="block px-4 py-3 text-base font-medium text-foreground/70 hover:text-primary hover:bg-fluxera-blue-pale/40 rounded-lg transition-colors min-h-12 flex items-center"
                 activeProps={{ className: 'text-primary bg-fluxera-blue-pale/60 font-semibold' }}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-2 border-t border-border">
+            <div className="pt-4 mt-4 border-t border-border space-y-2">
               {isAuthenticated ? (
-                <div className="space-y-1">
+                <>
                   <Link
                     to="/profile"
-                    className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary hover:bg-fluxera-blue-pale/40 rounded-lg transition-colors"
+                    className="flex items-center gap-2 px-4 py-3 text-base font-medium text-foreground/70 hover:text-primary hover:bg-fluxera-blue-pale/40 rounded-lg transition-colors min-h-12"
                     onClick={() => setMobileOpen(false)}
                   >
-                    <User className="w-4 h-4" /> Profile
+                    <User className="w-5 h-5" /> Profile
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="flex items-center gap-2 w-full px-3 py-2.5 text-sm font-medium text-destructive hover:bg-destructive/10 rounded-lg transition-colors"
+                    className="flex items-center gap-2 w-full px-4 py-3 text-base font-medium text-destructive hover:bg-destructive/10 rounded-lg transition-colors min-h-12"
                   >
-                    <LogOut className="w-4 h-4" /> Logout
+                    <LogOut className="w-5 h-5" /> Logout
                   </button>
-                </div>
+                </>
               ) : (
                 <button
                   onClick={() => { handleLogin(); setMobileOpen(false); }}
                   disabled={loginStatus === 'logging-in'}
-                  className="flex items-center gap-2 w-full px-3 py-2.5 text-sm font-medium text-primary hover:bg-fluxera-blue-pale/40 rounded-lg transition-colors"
+                  className="flex items-center gap-2 w-full px-4 py-3 text-base font-semibold text-primary bg-fluxera-blue-pale/60 hover:bg-fluxera-blue-pale rounded-lg transition-colors min-h-12"
                 >
-                  <LogIn className="w-4 h-4" />
+                  <LogIn className="w-5 h-5" />
                   {loginStatus === 'logging-in' ? 'Logging in...' : 'Login'}
                 </button>
               )}

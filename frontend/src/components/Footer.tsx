@@ -8,13 +8,18 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-border mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-6">
           {/* Logo */}
-          <img
-            src="/assets/generated/fluxera-logo.dim_400x120.png"
-            alt="Fluxera"
-            className="h-8 w-auto object-contain opacity-80"
-          />
+          <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-fluxera-blue to-fluxera-teal shadow-md">
+              <img
+                src="/src/assets/fluxera-logo.jpg"
+                alt="Fluxera"
+                className="h-10 w-10 object-contain"
+              />
+            </div>
+            <span className="text-lg font-bold text-primary">Fluxera</span>
+          </div>
 
           {/* Nav links */}
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">

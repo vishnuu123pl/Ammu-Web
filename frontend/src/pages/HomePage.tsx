@@ -5,17 +5,24 @@ import {
   Search, HandshakeIcon, RotateCcw, Leaf, Users, IndianRupee, ArrowRight,
   Star, Shield, Zap
 } from 'lucide-react';
+import { HeroSection } from '@/components/HeroSection';
+import { PageContainer } from '@/components/PageContainer';
+import { SectionCard } from '@/components/SectionCard';
+import { StepCard } from '@/components/StepCard';
+import { BenefitCard } from '@/components/BenefitCard';
+import { CategoryCard } from '@/components/CategoryCard';
+import { categories } from '@/constants/design';
 
-const categories = [
-  { name: 'Books & Notes', icon: BookOpen, color: 'bg-blue-50 text-blue-600' },
-  { name: 'Lab Coats', icon: Shirt, color: 'bg-teal-50 text-teal-600' },
-  { name: 'Calculators', icon: Calculator, color: 'bg-sky-50 text-sky-600' },
-  { name: 'Electronics', icon: Cpu, color: 'bg-indigo-50 text-indigo-600' },
-  { name: 'Hostel Essentials', icon: Home, color: 'bg-cyan-50 text-cyan-600' },
-  { name: 'Tools', icon: Wrench, color: 'bg-blue-50 text-blue-700' },
-  { name: 'Bags', icon: Backpack, color: 'bg-teal-50 text-teal-700' },
-  { name: 'Sports Items', icon: Trophy, color: 'bg-sky-50 text-sky-700' },
-];
+const categoryIcons: Record<string, any> = {
+  'Books & Notes': BookOpen,
+  'Lab Coats': Shirt,
+  'Calculators': Calculator,
+  'Electronics': Cpu,
+  'Hostel Essentials': Home,
+  'Tools': Wrench,
+  'Bags': Backpack,
+  'Sports Items': Trophy,
+};
 
 const steps = [
   {
@@ -53,12 +60,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-fluxera-gray-light via-white to-fluxera-blue-pale overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-primary blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-accent blur-3xl" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <HeroSection>
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-fluxera-blue-pale text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
@@ -116,54 +118,48 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </HeroSection>
 
       {/* How It Works */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24 bg-white">
+        <PageContainer>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-3">How Fluxera Works</h2>
             <p className="text-muted-foreground text-lg">Three simple steps to start saving money</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((s) => (
-              <div key={s.step} className="relative flex flex-col items-center text-center p-8 rounded-2xl bg-fluxera-gray-light border border-border hover:shadow-card-hover transition-shadow">
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-sm font-black w-8 h-8 rounded-full flex items-center justify-center">
-                  {s.step}
-                </div>
-                <div className="w-16 h-16 rounded-2xl bg-fluxera-blue-pale flex items-center justify-center mb-4 mt-2">
-                  <s.icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{s.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-              </div>
+              <StepCard
+                key={s.step}
+                step={s.step}
+                icon={s.icon}
+                title={s.title}
+                description={s.desc}
+              />
             ))}
           </div>
-        </div>
+        </PageContainer>
       </section>
 
       {/* Categories */}
-      <section className="py-16 lg:py-20 bg-fluxera-gray-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24 bg-fluxera-gray-light">
+        <PageContainer>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-3">Browse Categories</h2>
             <p className="text-muted-foreground text-lg">Find exactly what you need for your KTU studies</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {categories.map((cat) => (
-              <Link
-                key={cat.name}
-                to="/borrow"
-                search={{ category: cat.name }}
-                className="group flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-border hover:shadow-card-hover hover:border-primary/30 transition-all cursor-pointer"
-              >
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${cat.color} group-hover:scale-110 transition-transform`}>
-                  <cat.icon className="w-7 h-7" />
-                </div>
-                <span className="text-sm font-semibold text-foreground text-center leading-tight">{cat.name}</span>
-              </Link>
-            ))}
+            {categories.map((cat) => {
+              const IconComponent = categoryIcons[cat.name];
+              return (
+                <CategoryCard
+                  key={cat.name}
+                  name={cat.name}
+                  icon={IconComponent}
+                  color={cat.color}
+                />
+              );
+            })}
           </div>
           <div className="text-center mt-8">
             <Link to="/categories">
@@ -172,35 +168,32 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-        </div>
+        </PageContainer>
       </section>
 
       {/* Why Choose Fluxera */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24 bg-white">
+        <PageContainer>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-3">Why Choose Fluxera?</h2>
             <p className="text-muted-foreground text-lg">Built specifically for the KTU student community</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b) => (
-              <div key={b.title} className="flex gap-4 p-6 rounded-2xl bg-fluxera-gray-light border border-border hover:shadow-card transition-shadow">
-                <div className="w-12 h-12 rounded-xl bg-fluxera-blue-pale flex items-center justify-center shrink-0">
-                  <b.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">{b.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
-                </div>
-              </div>
+              <BenefitCard
+                key={b.title}
+                icon={b.icon}
+                title={b.title}
+                description={b.desc}
+              />
             ))}
           </div>
-        </div>
+        </PageContainer>
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-primary to-primary-dark text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-primary to-primary-dark text-primary-foreground">
+        <PageContainer className="text-center">
           <h2 className="text-3xl sm:text-4xl font-black mb-4">
             Join the KTU Sharing Revolution
           </h2>
@@ -217,7 +210,7 @@ export default function HomePage() {
               Start Borrowing (₹)
             </Button>
           </Link>
-        </div>
+        </PageContainer>
       </section>
     </div>
   );
